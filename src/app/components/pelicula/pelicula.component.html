@@ -1,0 +1,20 @@
+<div *ngIf="pelicula" class="margenSuperior animated fadeIn slow">
+  <h1>{{ pelicula.original_title }}</h1>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <img class="img-thumbnail img-fluid" [src]="pelicula | peliculaImagen:true" [alt]="pelicula.original_title">
+    </div>
+    <div class="col-sm-7">
+      <h3> <strong>Sinopsis</strong> </h3>
+      <hr>
+      <p class="text-justify">{{ pelicula.overview }}</p>
+      <h4>Frase:</h4>
+      <p>{{ pelicula.tagline }}</p>
+      <p><strong>Popularidad:</strong> <span class="badge badge-info"> {{ pelicula.popularity | number:".0-0" }} / sobre 10. </span></p>
+      <br>
+      <p><strong>Votos:</strong> <span class="badge badge-info"> {{ pelicula.vote.average}} </span></p>
+      <button class="btn blue-gradient" [routerLink]="['/'+btnVolver, busqueda]"><i class="fa fa-arrow-left left"></i> Volver </button>
+    </div>
+  </div>
+</div>
