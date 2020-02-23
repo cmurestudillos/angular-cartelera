@@ -13,16 +13,8 @@ export class HomeComponent implements OnInit {
   peliskids: any;
 
   constructor( public _peliSrv: PeliculasService ) {
-    this._peliSrv.getCartelera().subscribe( data => {
-      this.cartelera = data;
-    });
-
     this._peliSrv.getPopulares().subscribe( data => {
       this.populares = data;
-    });
-
-    this._peliSrv.getPopularesKids().subscribe( data => {
-      this.peliskids = data;
     });
   }
 

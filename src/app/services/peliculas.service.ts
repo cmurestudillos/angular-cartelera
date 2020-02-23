@@ -13,44 +13,13 @@ export class PeliculasService {
 
   constructor(private http: HttpClient) { }
 
-  //Obtenemos un listado de las peliculas en cartelera
-  getCartelera(){
-    let yearDesde = new Date().getFullYear();
-    let monthDesde = new Date().getMonth();
-    let dayDesde = new Date().getDate();
-
-    let yearHasta = new Date().getFullYear();
-    let monthHasta = new Date().getMonth();
-    let dayHasta = new Date().getDate() + 7;
-
-    let fechaDesde = `${ yearDesde }-${ monthDesde }-${ dayDesde }`;
-    let fechaHasta = `${ yearHasta }-${ monthHasta }-${ dayHasta }`;
-
-    let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ fechaDesde }&primary_release_date.lte=${ fechaHasta }&api_key=${ this.apikey }`;
-
-    return this.http.get(url).pipe(map( (resp:any) => {
-      resp.results
-      return resp.results
-    } ) );
-  }
-
-  //Obtenemos un listado de las peliculas mas populares para los niños
-  getPopularesKids(){
-    let url = `${ this.urlMoviedb }/discover/movie?certification_country=ES&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apikey }`;
-
-    return this.http.get(url).pipe(map( (resp:any) => {
-                resp.results
-                return resp.results
-              } ) );
-  }
-
   //Obtenemos un listado de las peliculas mas populares
   getPopulares(){
-    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }`;
+    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es`;
 
-    return this.http.get(url).pipe(map( (resp:any) => {
-                resp.results
-                return resp.results
+    return this.http.get(url).pipe(map( (respp:any) => {
+      respp.results
+                return respp.results;
               } ) );
   }
 
