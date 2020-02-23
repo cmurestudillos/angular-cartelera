@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron jumbotron-fluid margenSuperior\">\n  <div class=\"container text-center\">\n    <h2 class=\"display-4\"> BlockBuster </h2>\n    <p class=\"lead\"> Buscador y visualizacion de peliculas. </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <app-galeria [peliculas]=\"cartelera|slice:0:6\" titulo=\"Peliculas en cartelera\"></app-galeria>\n  <app-galeria [peliculas]=\"populares|slice:0:6\" titulo=\"Peliculas populares\"></app-galeria>\n  <app-galeria [peliculas]=\"peliskids|slice:0:6\" titulo=\"Peliculas populares para niños\"></app-galeria>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron jumbotron-fluid margenSuperior\">\n  <div class=\"container text-center\">\n    <h2 class=\"display-4\"> BlockBuster </h2>\n    <p class=\"lead\"> Buscador y visualizacion de peliculas. </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <app-galeria [peliculas]=\"populares|slice:0:6\" titulo=\"Peliculas populares\"></app-galeria>\n</div>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"pelicula\" class=\"margenSuperior animated fadeIn slow\">\n  <h1>{{ pelicula.original_title }}</h1>\n\n  <div class=\"row\">\n    <div class=\"col-sm-5\">\n      <img class=\"img-thumbnail img-fluid\" [src]=\"pelicula | peliculaImagen:true\" [alt]=\"pelicula.original_title\">\n    </div>\n    <div class=\"col-sm-7\">\n      <h3> <strong>Sinopsis</strong> </h3>\n      <hr>\n      <p class=\"text-justify\">{{ pelicula.overview }}</p>\n      <h4>Frase:</h4>\n      <p>{{ pelicula.tagline }}</p>\n      <p><strong>Popularidad:</strong> <span class=\"badge badge-info\"> {{ pelicula.popularity | number:\".0-0\" }} / sobre 10. </span></p>\n      <br>\n      <p><strong>Votos:</strong> <span class=\"badge badge-info\"> {{ pelicula.vote.average}} </span></p>\n      <button class=\"btn blue-gradient\" [routerLink]=\"['/'+btnVolver, busqueda]\"><i class=\"fa fa-arrow-left left\"></i> Volver </button>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"pelicula\" class=\"margenSuperior animated fadeIn slow\">\n  <h1>{{ pelicula.original_title }}</h1>\n\n  <div class=\"row\">\n    <div class=\"col-sm-5\">\n      <img class=\"img-thumbnail img-fluid\" [src]=\"pelicula | peliculaImagen:true\" [alt]=\"pelicula.original_title\">\n    </div>\n    <div class=\"col-sm-7\">\n      <h3> <strong>Sinopsis</strong> </h3>\n      <hr>\n      <p class=\"text-justify\">{{ pelicula.overview }}</p>\n      <h4>Frase:</h4>\n      <p>{{ pelicula.tagline }}</p>\n      <br>\n      <p><strong>Votos:</strong> <span class=\"badge badge-info\"> {{ pelicula.vote_average}} </span></p>\n      <button class=\"btn blue-gradient\" [routerLink]=\"['/'+btnVolver, busqueda]\"><i class=\"fa fa-arrow-left left\"></i> Volver </button>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -653,14 +653,8 @@ __webpack_require__.r(__webpack_exports__);
 let HomeComponent = class HomeComponent {
     constructor(_peliSrv) {
         this._peliSrv = _peliSrv;
-        this._peliSrv.getCartelera().subscribe(data => {
-            this.cartelera = data;
-        });
         this._peliSrv.getPopulares().subscribe(data => {
             this.populares = data;
-        });
-        this._peliSrv.getPopularesKids().subscribe(data => {
-            this.peliskids = data;
         });
     }
     ngOnInit() {
@@ -922,36 +916,12 @@ let PeliculasService = class PeliculasService {
         this.urlMoviedb = " https://api.themoviedb.org/3";
         this.peliculas = [];
     }
-    //Obtenemos un listado de las peliculas en cartelera
-    getCartelera() {
-        let yearDesde = new Date().getFullYear();
-        let monthDesde = new Date().getMonth();
-        let dayDesde = new Date().getDate();
-        let yearHasta = new Date().getFullYear();
-        let monthHasta = new Date().getMonth();
-        let dayHasta = new Date().getDate() + 7;
-        let fechaDesde = `${yearDesde}-${monthDesde}-${dayDesde}`;
-        let fechaHasta = `${yearHasta}-${monthHasta}-${dayHasta}`;
-        let url = `${this.urlMoviedb}/discover/movie?primary_release_date.gte=${fechaDesde}&primary_release_date.lte=${fechaHasta}&api_key=${this.apikey}`;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((resp) => {
-            resp.results;
-            return resp.results;
-        }));
-    }
-    //Obtenemos un listado de las peliculas mas populares para los niños
-    getPopularesKids() {
-        let url = `${this.urlMoviedb}/discover/movie?certification_country=ES&certification.lte=G&sort_by=popularity.desc&api_key=${this.apikey}`;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((resp) => {
-            resp.results;
-            return resp.results;
-        }));
-    }
     //Obtenemos un listado de las peliculas mas populares
     getPopulares() {
-        let url = `${this.urlMoviedb}/discover/movie?sort_by=popularity.desc&api_key=${this.apikey}`;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((resp) => {
-            resp.results;
-            return resp.results;
+        let url = `${this.urlMoviedb}/discover/movie?sort_by=popularity.desc&api_key=${this.apikey}&language=es`;
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((respp) => {
+            respp.results;
+            return respp.results;
         }));
     }
     // Buscador de peliculas
@@ -1046,7 +1016,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\cme022es\Documents\Carlos Mur\visual-code\curso_angular\Angular\11-appMovieDB\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Carlos\Documents\GitHub\appMovieDB\src\main.ts */"./src/main.ts");
 
 
 /***/ })

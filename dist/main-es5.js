@@ -111,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"jumbotron jumbotron-fluid margenSuperior\">\n  <div class=\"container text-center\">\n    <h2 class=\"display-4\"> BlockBuster </h2>\n    <p class=\"lead\"> Buscador y visualizacion de peliculas. </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <app-galeria [peliculas]=\"cartelera|slice:0:6\" titulo=\"Peliculas en cartelera\"></app-galeria>\n  <app-galeria [peliculas]=\"populares|slice:0:6\" titulo=\"Peliculas populares\"></app-galeria>\n  <app-galeria [peliculas]=\"peliskids|slice:0:6\" titulo=\"Peliculas populares para niños\"></app-galeria>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"jumbotron jumbotron-fluid margenSuperior\">\n  <div class=\"container text-center\">\n    <h2 class=\"display-4\"> BlockBuster </h2>\n    <p class=\"lead\"> Buscador y visualizacion de peliculas. </p>\n  </div>\n</div>\n\n<div class=\"container\">\n  <br>\n  <app-galeria [peliculas]=\"populares|slice:0:6\" titulo=\"Peliculas populares\"></app-galeria>\n</div>\n";
     /***/
   },
 
@@ -131,7 +131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"pelicula\" class=\"margenSuperior animated fadeIn slow\">\n  <h1>{{ pelicula.original_title }}</h1>\n\n  <div class=\"row\">\n    <div class=\"col-sm-5\">\n      <img class=\"img-thumbnail img-fluid\" [src]=\"pelicula | peliculaImagen:true\" [alt]=\"pelicula.original_title\">\n    </div>\n    <div class=\"col-sm-7\">\n      <h3> <strong>Sinopsis</strong> </h3>\n      <hr>\n      <p class=\"text-justify\">{{ pelicula.overview }}</p>\n      <h4>Frase:</h4>\n      <p>{{ pelicula.tagline }}</p>\n      <p><strong>Popularidad:</strong> <span class=\"badge badge-info\"> {{ pelicula.popularity | number:\".0-0\" }} / sobre 10. </span></p>\n      <br>\n      <p><strong>Votos:</strong> <span class=\"badge badge-info\"> {{ pelicula.vote.average}} </span></p>\n      <button class=\"btn blue-gradient\" [routerLink]=\"['/'+btnVolver, busqueda]\"><i class=\"fa fa-arrow-left left\"></i> Volver </button>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div *ngIf=\"pelicula\" class=\"margenSuperior animated fadeIn slow\">\n  <h1>{{ pelicula.original_title }}</h1>\n\n  <div class=\"row\">\n    <div class=\"col-sm-5\">\n      <img class=\"img-thumbnail img-fluid\" [src]=\"pelicula | peliculaImagen:true\" [alt]=\"pelicula.original_title\">\n    </div>\n    <div class=\"col-sm-7\">\n      <h3> <strong>Sinopsis</strong> </h3>\n      <hr>\n      <p class=\"text-justify\">{{ pelicula.overview }}</p>\n      <h4>Frase:</h4>\n      <p>{{ pelicula.tagline }}</p>\n      <br>\n      <p><strong>Votos:</strong> <span class=\"badge badge-info\"> {{ pelicula.vote_average}} </span></p>\n      <button class=\"btn blue-gradient\" [routerLink]=\"['/'+btnVolver, busqueda]\"><i class=\"fa fa-arrow-left left\"></i> Volver </button>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -1291,16 +1291,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this._peliSrv = _peliSrv;
 
-        this._peliSrv.getCartelera().subscribe(function (data) {
-          _this2.cartelera = data;
-        });
-
         this._peliSrv.getPopulares().subscribe(function (data) {
           _this2.populares = data;
-        });
-
-        this._peliSrv.getPopularesKids().subscribe(function (data) {
-          _this2.peliskids = data;
         });
       }
 
@@ -1757,44 +1749,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.apikey = "c2748618c1998925f6d77c978bff9418";
         this.urlMoviedb = " https://api.themoviedb.org/3";
         this.peliculas = [];
-      } //Obtenemos un listado de las peliculas en cartelera
+      } //Obtenemos un listado de las peliculas mas populares
 
 
       _createClass(PeliculasService, [{
-        key: "getCartelera",
-        value: function getCartelera() {
-          var yearDesde = new Date().getFullYear();
-          var monthDesde = new Date().getMonth();
-          var dayDesde = new Date().getDate();
-          var yearHasta = new Date().getFullYear();
-          var monthHasta = new Date().getMonth();
-          var dayHasta = new Date().getDate() + 7;
-          var fechaDesde = "".concat(yearDesde, "-").concat(monthDesde, "-").concat(dayDesde);
-          var fechaHasta = "".concat(yearHasta, "-").concat(monthHasta, "-").concat(dayHasta);
-          var url = "".concat(this.urlMoviedb, "/discover/movie?primary_release_date.gte=").concat(fechaDesde, "&primary_release_date.lte=").concat(fechaHasta, "&api_key=").concat(this.apikey);
-          return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (resp) {
-            resp.results;
-            return resp.results;
-          }));
-        } //Obtenemos un listado de las peliculas mas populares para los niños
-
-      }, {
-        key: "getPopularesKids",
-        value: function getPopularesKids() {
-          var url = "".concat(this.urlMoviedb, "/discover/movie?certification_country=ES&certification.lte=G&sort_by=popularity.desc&api_key=").concat(this.apikey);
-          return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (resp) {
-            resp.results;
-            return resp.results;
-          }));
-        } //Obtenemos un listado de las peliculas mas populares
-
-      }, {
         key: "getPopulares",
         value: function getPopulares() {
-          var url = "".concat(this.urlMoviedb, "/discover/movie?sort_by=popularity.desc&api_key=").concat(this.apikey);
-          return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (resp) {
-            resp.results;
-            return resp.results;
+          var url = "".concat(this.urlMoviedb, "/discover/movie?sort_by=popularity.desc&api_key=").concat(this.apikey, "&language=es");
+          return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (respp) {
+            respp.results;
+            return respp.results;
           }));
         } // Buscador de peliculas
 
@@ -1944,7 +1908,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\cme022es\Documents\Carlos Mur\visual-code\curso_angular\Angular\11-appMovieDB\src\main.ts */
+    /*! C:\Users\Carlos\Documents\GitHub\appMovieDB\src\main.ts */
     "./src/main.ts");
     /***/
   }
