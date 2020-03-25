@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class PeliculasService {
 
-  private apikey:string="c2748618c1998925f6d77c978bff9418";
+  private apikey:string="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
   private urlMoviedb:string = " https://api.themoviedb.org/3";
   peliculas:any [] = [];
 
