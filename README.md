@@ -1,4 +1,4 @@
-# AppMovieDB
+# peliculasAngular
 
 Aplicacion web de peliculas con realizada con Angular y Material Design Bootstrap 4 utilizando la API [themoviedb](https://www.themoviedb.org).
 
