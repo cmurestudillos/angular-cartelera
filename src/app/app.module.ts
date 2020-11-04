@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //Servicios
 import { PeliculasService } from './services/peliculas.service';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routes/app-routing.module';
 
 // Pipes
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
