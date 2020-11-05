@@ -11,5 +11,5 @@
 .vscode
 
 # Config files
-api/key.js
-api/url.ts
+key.js
+url.ts

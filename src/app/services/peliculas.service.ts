@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 // Configuracion EndPoint API
-import {Global} from '../api/global';
+import {Global} from '../conf/global';
 
 @Injectable({
   providedIn: 'root'
