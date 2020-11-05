@@ -6,8 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-buscar',
-  templateUrl: './buscar.component.html',
-  styleUrls: ['./buscar.component.css']
+  templateUrl: '../../views/buscar.component.html'
 })
 export class BuscarComponent implements OnInit {
 

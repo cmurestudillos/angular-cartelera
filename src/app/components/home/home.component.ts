@@ -3,8 +3,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: '../../views/home.component.html'
 })
 export class HomeComponent implements OnInit {
 

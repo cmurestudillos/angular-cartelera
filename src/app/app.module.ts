@@ -16,7 +16,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
-import { GaleriaComponent } from './components/home/galeria.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
 
 
 @NgModule({
