@@ -1,15 +1,15 @@
 # dependences
-node_modules
+/node_modules
 
 # testing
-coverage
+/coverage
 
 # production
-dist
+/dist
 
 # editor directories and files
 .vscode
 
 # Config files
-key.js
-url.ts
+api/key.js
+api/url.ts
