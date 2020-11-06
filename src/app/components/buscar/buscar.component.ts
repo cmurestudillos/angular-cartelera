@@ -28,9 +28,11 @@ export class BuscarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
+  //---------------------------------------------------------------//
+  // Metodo buscarPelicula: Busqueda de peliculas                  //
+  //---------------------------------------------------------------//
   buscarPelicula(){
+
     if(this.buscador.length === 0){
       return;
     }
