@@ -1,0 +1,13 @@
+<h1>Cartelera</h1>
+
+<div class="row" *ngIf="peliculas.length > 0">
+    <div class="col">
+        <SlideshowComponent [peliculas]="peliculasSlideshow"></SlideshowComponent>
+    </div>
+</div>
+
+<h1 class="mt-5">Películas</h1>
+
+<PeliculasPosterGridComponent  *ngIf="peliculas.length > 0" [peliculas]="peliculas"></PeliculasPosterGridComponent>
+<!-- Boton: Ir Arriba -->
+<a href="javascript:window.scrollTo(0, 0);" id="scroll" title="Ir arriba" style="display: none;">Top<span></span></a>

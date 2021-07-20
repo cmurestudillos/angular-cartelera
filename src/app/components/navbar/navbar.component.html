@@ -1,0 +1,49 @@
+  <nav class="navbar navbar-expand-lg border-bottom border-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">
+        <img src="assets/logo.png" height="64" alt="Películas" title="Películas">
+      </a>
+      <button class="navbar-toggler navbar-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>   
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"> 
+            <div class="popover__wrapper">
+              <a class="nav-link" href="!#">
+                <h2 class="popover__title">Info</h2>
+              </a>
+              <div class="popover__content">
+                <div class="popover__message">
+                  <span>Informacion</span>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md">
+                      <div class="row">
+                        <div class="col-md text-white">
+                          <small>Buscador de peliculas: <i>Version: {{appVersion}}</i></small>
+                        </div>
+                        <div class="col-md">
+                          <span><u>Contacto via:</u></span>
+                          <div class="row">
+                            <div class="col"><a class="text-white" href="skype:carlos.mur.estudillos?chat"><i class="fab fa-skype fa-2x"></i></a></div>
+                            <div class="col"><a class="text-white" href="mailto:wefiletransfer85@gmail.com?Subject=Interesado%20en%20la%20aplicacion"><i class="fas fa-envelope fa-2x"></i></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <small>Copyright © - Designed and Created by:<a class="text-white" href="https://www.cmurestudillos.es" target="_blank" rel="noopener noreferrer"><strong>Carlos Mur</strong></a></small>
+                </div>
+              </div>
+            </div> 
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input #txtBuscar (keyup.enter)="buscarPelicula( txtBuscar.value )" class="form-control me-2" type="search" placeholder="Buscar película ..." aria-label="Search">
+          <button (click)="buscarPelicula( txtBuscar.value )" class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
