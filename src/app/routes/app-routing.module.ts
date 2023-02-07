@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 // Rutas
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 // Componentes
 import { HomeComponent } from '../pages/home/home.component';
 import { BuscarComponent } from '../pages/buscar/buscar.component';
@@ -15,12 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule]
 })
 export class AppRoutingModule { }
