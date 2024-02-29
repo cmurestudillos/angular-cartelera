@@ -3,3 +3,4 @@
 /dist
 .angular
 .vercel
+.package-lock.json

@@ -1,8 +1,8 @@
 {
-  "name": "peliculas",
+  "name": "cartelera",
   "version": "1.0.0",
   "author": {
-    "name": "Carlos Mur (cmur_85)",
+    "name": "Carlos Mur",
     "email": "cmurestudillos@gmail.com"
   },
   "description": "Buscador de peliculas para obtener opinion y datos sobr ellas.",
