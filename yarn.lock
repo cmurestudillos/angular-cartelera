@@ -10,14 +10,6 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@angular-devkit/architect@0.1502.10":
-  version "0.1502.10"
-  resolved "https://registry.npmjs.org/@angular-devkit/architect/-/architect-0.1502.10.tgz"
-  integrity sha512-S8lN73WYCfpEpw1Q41ZcUinw7JfDeSM8LyGs797OVshnW75QcOkOecWj/3CKR23G44IgFrHN6sqtzWxKmMxLig==
-  dependencies:
-    "@angular-devkit/core" "15.2.10"
-    rxjs "6.6.7"
-
 "@angular-devkit/architect@0.1502.11":
   version "0.1502.11"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1502.11.tgz#841a25eaed0c463329726644fbb3bb06a8617f0e"
@@ -26,15 +18,15 @@
     "@angular-devkit/core" "15.2.11"
     rxjs "6.6.7"
 
-"@angular-devkit/build-angular@^15.0.1":
-  version "15.2.10"
-  resolved "https://registry.npmjs.org/@angular-devkit/build-angular/-/build-angular-15.2.10.tgz"
-  integrity sha512-3pCPVEJilVwHIJC6Su1/PIEqvFfU1Lxew9yItxX4s6dud8HY+fuKrsDnao4NNMFNqCLqL4el5QbSBKnnpWH1sg==
+"@angular-devkit/build-angular@^15.2.11":
+  version "15.2.11"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-15.2.11.tgz#1235d45c6d417912d01ef3fbcad1465fcb8a81d2"
+  integrity sha512-MnpVCJdk5jHuK7CH/cTcRT0JQkkKkRTEV3WTyOUhTm0O3PlKwvTM6/Sner+zyuhKyw5VFBBMypHh59aTUDEZ1A==
   dependencies:
     "@ampproject/remapping" "2.2.0"
-    "@angular-devkit/architect" "0.1502.10"
-    "@angular-devkit/build-webpack" "0.1502.10"
-    "@angular-devkit/core" "15.2.10"
+    "@angular-devkit/architect" "0.1502.11"
+    "@angular-devkit/build-webpack" "0.1502.11"
+    "@angular-devkit/core" "15.2.11"
     "@babel/core" "7.20.12"
     "@babel/generator" "7.20.14"
     "@babel/helper-annotate-as-pure" "7.18.6"
@@ -46,7 +38,7 @@
     "@babel/runtime" "7.20.13"
     "@babel/template" "7.20.7"
     "@discoveryjs/json-ext" "0.5.7"
-    "@ngtools/webpack" "15.2.10"
+    "@ngtools/webpack" "15.2.11"
     ansi-colors "4.1.3"
     autoprefixer "10.4.13"
     babel-loader "9.1.2"
@@ -87,31 +79,20 @@
     tree-kill "1.2.2"
     tslib "2.5.0"
     webpack "5.76.1"
-    webpack-dev-middleware "6.0.1"
+    webpack-dev-middleware "6.1.2"
     webpack-dev-server "4.11.1"
     webpack-merge "5.8.0"
     webpack-subresource-integrity "5.1.0"
   optionalDependencies:
     esbuild "0.17.8"
 
-"@angular-devkit/build-webpack@0.1502.10":
-  version "0.1502.10"
-  resolved "https://registry.npmjs.org/@angular-devkit/build-webpack/-/build-webpack-0.1502.10.tgz"
-  integrity sha512-55b9WZIGU4DNgiIV2lkkN6iQxJrgWY5CDaNu0kJC/qazotJgBbcN/8jgBx2DD8HNE1V3iXxWk66pt1h946Po+Q==
+"@angular-devkit/build-webpack@0.1502.11":
+  version "0.1502.11"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-webpack/-/build-webpack-0.1502.11.tgz#eec4dcd783557401305dc57778ad5f1f09cd6df3"
+  integrity sha512-OTONIRp770Jfems4+cULmtoeSzjnpx5UjV2EazojnhRXXBSJMWRMPvwD2QvQl9UO/6eOV3d2mgmP2xOZgc/D6w==
   dependencies:
-    "@angular-devkit/architect" "0.1502.10"
+    "@angular-devkit/architect" "0.1502.11"
     rxjs "6.6.7"
-
-"@angular-devkit/core@15.2.10":
-  version "15.2.10"
-  resolved "https://registry.npmjs.org/@angular-devkit/core/-/core-15.2.10.tgz"
-  integrity sha512-bFPm7wjvfBds9km2rCJxUhzkqe4h3h/199yJtzC1bNvwRr2LMHvtyoQAzftda+gs7Ulqac5wzUEZX/cVV3WrsA==
-  dependencies:
-    ajv "8.12.0"
-    ajv-formats "2.1.1"
-    jsonc-parser "3.2.0"
-    rxjs "6.6.7"
-    source-map "0.7.4"
 
 "@angular-devkit/core@15.2.11":
   version "15.2.11"
@@ -291,7 +272,7 @@
     json5 "^2.2.2"
     semver "^6.3.0"
 
-"@babel/generator@7.20.14", "@babel/generator@^7.19.3", "@babel/generator@^7.20.7":
+"@babel/generator@7.20.14":
   version "7.20.14"
   resolved "https://registry.npmjs.org/@babel/generator/-/generator-7.20.14.tgz"
   integrity sha512-AEmuXHdcD3A52HHXxaTmYlb8q/xMEhoRP67B3T4Oq7lbmSoqroMZzjnGj3+i1io3pdnF8iBYVu4Ilj+c4hBxYg==
@@ -300,7 +281,7 @@
     "@jridgewell/gen-mapping" "^0.3.2"
     jsesc "^2.5.1"
 
-"@babel/generator@^7.23.6":
+"@babel/generator@^7.19.3", "@babel/generator@^7.20.7", "@babel/generator@^7.23.6":
   version "7.23.6"
   resolved "https://registry.npmjs.org/@babel/generator/-/generator-7.23.6.tgz"
   integrity sha512-qrSfCYxYQB5owCmGLbl8XRpX1ytXlpueOb0N0UmQwA073KZxejgQTzAmJezxvpwQD9uGtK2shHdi55QT+MbjIw==
@@ -310,14 +291,14 @@
     "@jridgewell/trace-mapping" "^0.3.17"
     jsesc "^2.5.1"
 
-"@babel/helper-annotate-as-pure@7.18.6", "@babel/helper-annotate-as-pure@^7.18.6":
+"@babel/helper-annotate-as-pure@7.18.6":
   version "7.18.6"
   resolved "https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.18.6.tgz"
   integrity sha512-duORpUiYrEpzKIop6iNbjnwKLAKnJ47csTyRACyEmWj0QdUrm5aqNJGHSSEQSUAvNW0ojX0dOmK9dZduvkfeXA==
   dependencies:
     "@babel/types" "^7.18.6"
 
-"@babel/helper-annotate-as-pure@^7.22.5":
+"@babel/helper-annotate-as-pure@^7.18.6", "@babel/helper-annotate-as-pure@^7.22.5":
   version "7.22.5"
   resolved "https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.22.5.tgz"
   integrity sha512-LvBTxu8bQSQkcyKOU+a1btnNFQ1dMAd0R6PyW3arXes06F6QLWLIrd681bxRPIXlrMGR3XYnW9JyML7dP3qgxg==
@@ -1154,7 +1135,7 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/template@7.20.7", "@babel/template@^7.18.10", "@babel/template@^7.20.7":
+"@babel/template@7.20.7":
   version "7.20.7"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.20.7.tgz"
   integrity sha512-8SegXApWe6VoNw0r9JHpSteLKTpTiLZ4rMlGIm9JQ18KiCtyQiAMEazujAHrUS5flrcqYZa75ukev3P6QmUwUw==
@@ -1163,7 +1144,7 @@
     "@babel/parser" "^7.20.7"
     "@babel/types" "^7.20.7"
 
-"@babel/template@^7.22.15", "@babel/template@^7.24.0":
+"@babel/template@^7.18.10", "@babel/template@^7.20.7", "@babel/template@^7.22.15", "@babel/template@^7.24.0":
   version "7.24.0"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.24.0.tgz"
   integrity sha512-Bkf2q8lMB0AFpX0NFEqSbx1OkTHf0f+0j82mkw+ZpzBnkk7e9Ql0891vlfgi+kHwOk8tQjiQHpqh4LaSa0fKEA==
@@ -1403,10 +1384,10 @@
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@ngtools/webpack@15.2.10":
-  version "15.2.10"
-  resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-15.2.10.tgz"
-  integrity sha512-ZExB4rKh/Saad31O/Ofd2XvRuILuCNTYs0+qJL697Be2pzeewvzBhE4Xe1Mm7Jg13aWSPeuIdzSGOqCdwxxxFQ==
+"@ngtools/webpack@15.2.11":
+  version "15.2.11"
+  resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-15.2.11.tgz#c30f7af978bc512b874624ce0f7be5d22ae39e6d"
+  integrity sha512-yqp+FziuJ+wIVij4eTqfhuiTPNaG1PU8ukeGOdqkVH4nQMlmzs9UldXy1iYC/6swzn6XO/pkqisU3m/jxemMzA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2204,7 +2185,7 @@ braces@^3.0.2, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-browserslist@4.21.5, browserslist@^4.14.5, browserslist@^4.21.4:
+browserslist@4.21.5:
   version "4.21.5"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.21.5.tgz"
   integrity sha512-tUkiguQGW7S3IhB7N+c2MV/HZPSCPAAiYBZXLsBhFB/PCy6ZKKsZrmBayHV9fdGV/ARIfJ14NkxKzRDjvp7L6w==
@@ -2214,7 +2195,7 @@ browserslist@4.21.5, browserslist@^4.14.5, browserslist@^4.21.4:
     node-releases "^2.0.8"
     update-browserslist-db "^1.0.10"
 
-browserslist@^4.22.2, browserslist@^4.22.3:
+browserslist@^4.14.5, browserslist@^4.21.4, browserslist@^4.22.2, browserslist@^4.22.3:
   version "4.23.0"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.23.0.tgz"
   integrity sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==
@@ -6064,10 +6045,10 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-dev-middleware@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/webpack-dev-middleware/-/webpack-dev-middleware-6.0.1.tgz"
-  integrity sha512-PZPZ6jFinmqVPJZbisfggDiC+2EeGZ1ZByyMP5sOFJcPPWSexalISz+cvm+j+oYPT7FIJyxT76esjnw9DhE5sw==
+webpack-dev-middleware@6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-6.1.2.tgz#0463232e59b7d7330fa154121528d484d36eb973"
+  integrity sha512-Wu+EHmX326YPYUpQLKmKbTyZZJIB8/n6R09pTmB03kJmnMsVPTo9COzHZFr01txwaCAuZvfBJE4ZCHRcKs5JaQ==
   dependencies:
     colorette "^2.0.10"
     memfs "^3.4.12"
